@@ -1,0 +1,84 @@
+#headerContainer {
+    width: 100%;
+    height: 60%;
+    display: table;
+
+    position: relative;
+}
+
+#header, #footer {
+    background: #ff8000;
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,.1) 20px, rgba(255,255,255,.1) 40px);
+}
+
+#header {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+
+    color: #F5F8FA;
+
+    font-family: "Futura LT";
+
+    text-align: center;
+    padding-bottom: 1.5em;
+}
+#header h1 {
+    font-size: 96pt;
+    font-weight: bold;
+}
+#header h2 {
+    font-size: 28pt;
+}
+#headerLinks {
+    position: absolute;
+    bottom: -0.5em;
+    
+    width: 100%;
+}
+#headerLinks a {
+    text-decoration: none;
+    color: white;
+    font-size: 20pt;
+    
+    padding: 5px 10px;
+    //padding-top: 100%;
+    
+    background: orange;
+    background: #ffc400;
+    
+    
+    border: 0px solid white;
+    border-radius: 5px 0px;
+}
+#headerLinks a:hover {
+    background: #FFD64F;
+}
+
+#contentContainer {
+    color: #333;
+    background: #F5F8FA;
+    text-align: center;
+    padding: 24pt 0px;
+}
+#content {
+    font-family: "Futura LT";
+    font-size: 18pt;
+    
+    line-height: 1.5em;
+    
+    width: 80%;
+    max-width: 1080pt;
+    margin: auto;
+}
+
+#footer {
+    font-family: "Futura LT";
+    font-size: 16pt;
+    text-align: center;
+    
+    color: #F5F8FA;
+    
+    padding-top: 0.5em;
+    height: 60pt;
+}
