@@ -1,6 +1,7 @@
+/*header style*/
 #headerContainer {
     width: 100%;
-    height: 60%;
+    height: 55%;
     display: table;
 
     position: relative;
@@ -9,6 +10,12 @@
 #header, #footer {
     background: #ff8000;
     background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,.1) 20px, rgba(255,255,255,.1) 40px);
+    
+    color: #E6EDF2;
+}
+
+#header, #content, #footer {
+    font-family: Futura, "Futura LT", Helvetica, sans-serif;
 }
 
 #header {
@@ -16,16 +23,13 @@
     vertical-align: middle;
     position: relative;
 
-    color: #F5F8FA;
-
-    font-family: "Futura LT";
-
     text-align: center;
     padding-bottom: 1.5em;
 }
 #header h1 {
     font-size: 96pt;
-    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
 }
 #header h2 {
     font-size: 28pt;
@@ -42,42 +46,66 @@
     font-size: 20pt;
     
     padding: 5px 10px;
-    //padding-top: 100%;
     
     background: orange;
     background: #ffc400;
     
     
-    border: 0px solid white;
-    border-radius: 5px 0px;
+    border: 5px solid #E6EDF2;
+    border-radius: 10px 0px;
 }
 #headerLinks a:hover {
     background: #FFD64F;
 }
 
+/*content style*/
 #contentContainer {
     color: #333;
-    background: #F5F8FA;
+    background: #E6EDF2;
     text-align: center;
     padding: 24pt 0px;
 }
 #content {
-    font-family: "Futura LT";
+    font-family: Futura, "Futura LT", Helvetica, sans-serif;
     font-size: 18pt;
     
     line-height: 1.5em;
     
     width: 80%;
-    max-width: 1080pt;
+    max-width: 1000pt;
     margin: auto;
 }
+#content h2 {
+    font-size: 30pt;
+    font-weight: 100;
+    line-height: 1.5em;
+}
+#content img {
+    width: 10em;
+    height: 10em;
+    border-radius: 100%;
+    
+    float: left;
+    vertical-align: middle;
+}
+#content img.right {
+    float: right;
+}
+#content span {
+    text-align: left;
+    padding-left: 2em;
+    padding-right: 2em;
+    
+    height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+}
 
+
+/*footer style*/
 #footer {
-    font-family: "Futura LT";
     font-size: 16pt;
     text-align: center;
-    
-    color: #F5F8FA;
     
     padding-top: 0.5em;
     height: 60pt;
