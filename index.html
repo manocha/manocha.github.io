@@ -1,14 +1,33 @@
 <html>
 <head>
-    <title>garv</title>
+    <title>garv</title>    
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script src="jquery-2.1.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var $header = $('#headerContainer');
+            var $body = $("#content");
+            var originalHeight = $header.height();
+            
+            $(window).scroll(function() {
+                var st = $(this).scrollTop();
+                if(st > .9474*originalHeight) {
+                    $header.addClass('fixed');
+                    $body.addClass('padded');
+                } else {                    
+                    $header.removeClass('fixed');
+                    $body.removeClass('padded');
+                }
+            }).scroll();
+        });
+    </script>
 </head>
 
 <body>
     <div id="headerContainer">
     <div id="header">
-
         <div id="headerLinks">
             <a href="http://github.com/manocha">github</a>
             <a href="mailto:manocha@usc.edu">email</a>
@@ -20,18 +39,18 @@
     
     <div id="contentContainer">
     <div id="content">
+        <h2>PlanetRun</h2>
+        <img src="planetrun/ui%20mockup.png" class="right" />
+        <span>
+            <p>Lead designer on in-development iOS game based around travelling in space, defeating boss ships, and purchasing upgrades with the money you collect in your progress.</p>
+            <p>Lead engineer on &quot;PlanetRun&quot;, assigning other engineers tasks and deadlines, managing technical details and doing major programming work.</p>
+        </span><br />
+        
         <h2>Computer Science (Games)</h2>
         <img src="usc.png" />
         <span>
             <p>University of Southern California</p>
             <p>Programming Game Engines. Video Game Programming. Game Design Workshop. Video Game Production. Computer Organization and Architecture. Principles of Software Development. Introduction to Artificial Intelligence. Object-Oriented Programming. Pipelines for Games and Interactives.</p>
-        </span><br />
-        
-        <h2>PlanetRun</h2>
-        <img src="planetrun.jpg" class="right" />
-        <span>
-            <p>Lead designer on in-development iOS game based around travelling in space, defeating boss ships, and purchasing upgrades with the money you collect in your progress.</p>
-            <p>Lead engineer on &quot;PlanetRun&quot;, assigning other engineers tasks and deadlines, managing technical details and doing major programming work.</p>
         </span><br />
         
         <h2>FBGT - Brazil</h2>
