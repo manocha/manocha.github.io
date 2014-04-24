@@ -10,17 +10,35 @@
             var $header = $('#headerContainer');
             var $body = $("#content");
             var originalHeight = $header.height();
+            var fixedHeight = 45;
             
             $(window).scroll(function() {
                 var st = $(this).scrollTop();
-                if(st > .9474*originalHeight) {
-                    $header.addClass('fixed');
-                    $body.addClass('padded');
+                if(st > originalHeight-fixedHeight) {
+                    $header.css('position', 'fixed');
+                    $header.css('margin-top', -(originalHeight-fixedHeight)+'px');
+                    $body.css('padding-top', originalHeight+'px');
                 } else {                    
-                    $header.removeClass('fixed');
-                    $body.removeClass('padded');
+                    $header.css('position', 'relative');
+                    $header.css('margin-top', 0+'px');
+                    $body.css('padding-top', 0+'px');
                 }
             }).scroll();
+            
+            $(window).resize(function() {
+                $header.css('position', 'relative');
+                $header.css('margin-top', 0+'px');
+                $body.css('padding-top', 0+'px');
+                
+                originalHeight = $header.height();
+                
+                var st = $(this).scrollTop();
+                if(st > originalHeight-fixedHeight) {
+                    $header.css('position', 'fixed');
+                    $header.css('margin-top', -(originalHeight-fixedHeight)+'px');
+                    $body.css('padding-top', originalHeight+'px');
+                }
+            });
         });
     </script>
 </head>

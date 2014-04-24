@@ -7,16 +7,6 @@
     position: relative;
 }
 
-.fixed {
-    top: -90%;
-    position: fixed !important;
-}
-.padded {
-    padding-top: 102%;
-    /*padding-top: 102%;
-        works for 95% height*/
-}
-
 #header, #footer {
     background: #ff8000;
     background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,.1) 20px, rgba(255,255,255,.1) 40px);
