@@ -1,0 +1,48 @@
+/*content style*/
+#contentContainer {
+    color: #333;
+    background: #E6EDF2;
+    text-align: center;
+    padding: 24pt 0px;
+}
+#content {
+    font-size: 18pt;
+    
+    line-height: 1.5em;
+    
+    width: 80%;
+    max-width: 1000pt;
+    margin: auto;
+}
+#content h2 {
+    font-size: 30pt;
+    font-weight: 100;
+    line-height: 1.5em;
+}
+
+#content img {
+    width: 12em;
+}
+
+/*
+#content img {
+    width: 10em;
+    height: 10em;
+    border-radius: 100%;
+    
+    float: left;
+    vertical-align: middle;
+}
+#content img.right {
+    float: right;
+}
+#content span {
+    text-align: left;
+    padding-left: 2em;
+    padding-right: 2em;
+    
+    height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+}
+*/

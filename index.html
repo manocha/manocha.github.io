@@ -1,46 +1,13 @@
 <html>
 <head>
     <title>garv</title>    
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
     
-    <script src="jquery-2.1.0.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            var $header = $('#headerContainer');
-            var $body = $("#content");
-            var originalHeight = $header.height();
-            var fixedHeight = 42;
-            
-            $(window).scroll(function() {
-                var st = $(this).scrollTop();
-                if(st > originalHeight-fixedHeight) {
-                    $header.css('position', 'fixed');
-                    $header.css('margin-top', -(originalHeight-fixedHeight)+'px');
-                    $body.css('padding-top', originalHeight+'px');
-                } else {                    
-                    $header.css('position', 'relative');
-                    $header.css('margin-top', 0+'px');
-                    $body.css('padding-top', 0+'px');
-                }
-            }).scroll();
-            
-            $(window).resize(function() {
-                $header.css('position', 'relative');
-                $header.css('margin-top', 0+'px');
-                $body.css('padding-top', 0+'px');
-                
-                originalHeight = $header.height();
-                
-                var st = $(this).scrollTop();
-                if(st > originalHeight-fixedHeight) {
-                    $header.css('position', 'fixed');
-                    $header.css('margin-top', -(originalHeight-fixedHeight)+'px');
-                    $body.css('padding-top', originalHeight+'px');
-                }
-            });
-        });
-    </script>
+    <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
+    <link rel="stylesheet" type="text/css" href="css/content.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/roundabout.css">
 </head>
 
 <body>
@@ -58,21 +25,28 @@
     <div id="contentContainer">
     <div id="content">
         <h2>PlanetRun</h2>
-        <img src="planetrun/ui%20mockup.png" class="right" />
+        <ul>
+            <li><img src="img/planetrun/ui%20mockup.png" /></li>
+            <li><img src="img/planetrun/pause%20menu%20ss.png" /></li>
+            <li><img src="img/planetrun/boss%20fight%20ss.png" /></li>
+            <li><img src="img/planetrun/gameplay%20ss.png" /></li>
+            <li><img src="img/planetrun/ui%20mockup.png" /></li>
+            <li><img src="img/planetrun/gameplay%20ss.png" /></li>
+        </ul>
         <span>
             <p>Lead designer on in-development iOS game based around travelling in space, defeating boss ships, and purchasing upgrades with the money you collect in your progress.</p>
             <p>Lead engineer on &quot;PlanetRun&quot;, assigning other engineers tasks and deadlines, managing technical details and doing major programming work.</p>
         </span><br />
         
         <h2>Computer Science (Games)</h2>
-        <img src="usc.png" />
+        <img src="img/usc.png" />
         <span>
             <p>University of Southern California</p>
             <p>Programming Game Engines. Video Game Programming. Game Design Workshop. Video Game Production. Computer Organization and Architecture. Principles of Software Development. Introduction to Artificial Intelligence. Object-Oriented Programming. Pipelines for Games and Interactives.</p>
         </span><br />
         
         <h2>FBGT - Brazil</h2>
-        <img src="brazil.jpg" />
+        <img src="img/brazil.jpg" />
         <span>
             <p>Co-Director/Production Designer of music video for hip-hop collective, FBGT</p>
             <p>Successfully campaigned on IndieGogo to fund professional-level equipment, props, cast, crew, and location</p>
@@ -83,5 +57,70 @@
     <div id="footer">        
         <p>&copy; 2014 garv manocha</p>
     </div>
+    
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/jquery.roundabout.min.js"></script>
+    <script src="js/jquery.event.drag-2.2.js"></script>
+    <script src="js/jquery.event.drop-2.2.js"></script> 
+    <script>
+        $(document).ready(function(){            
+            //get scroll elements
+            var $header = $('#headerContainer');
+            var $body = $("#content");
+            var originalHeight = $header.height();
+            var fixedHeight = 42;
+            
+            //move links to fixed when scrolled past
+            $(window).scroll(function() {
+                var st = $(this).scrollTop();
+                if(st > originalHeight-fixedHeight) {
+                    $header.css('position', 'fixed');
+                    $header.css('margin-top', -(originalHeight-fixedHeight)+'px');
+                    $body.css('padding-top', originalHeight+'px');
+                } else {                    
+                    $header.css('position', 'relative');
+                    $header.css('margin-top', 0+'px');
+                    $body.css('padding-top', 0+'px');
+                }
+            }).scroll();
+            
+            //reset sizes when window resized
+            $(window).resize(function() {
+                $header.css('position', 'relative');
+                $header.css('margin-top', 0+'px');
+                $body.css('padding-top', 0+'px');
+                
+                originalHeight = $header.height();
+                
+                var st = $(this).scrollTop();
+                if(st > originalHeight-fixedHeight) {
+                    $header.css('position', 'fixed');
+                    $header.css('margin-top', -(originalHeight-fixedHeight)+'px');
+                    $body.css('padding-top', originalHeight+'px');
+                }
+            });
+            
+            //set roundabout elements
+            $('li').bind({"reposition": function() {
+                var degrees = $(this).data('roundabout').degrees;
+                var roundaboutBearing = $(this).parent().data('roundabout').bearing;
+                var rotate = Math.round(roundaboutBearing - degrees);
+                
+                $(this).css({
+                    "-webkit-transform": "rotate(" + rotate + "deg)",
+                    "-moz-transform": "rotate(" + rotate + "deg)",
+                    "transform": "rotate(" + rotate + "deg)"
+                });
+            }})
+            $('ul').roundabout({
+                minScale: 0.1,
+                duration: 200,
+                enableDrag: true,
+            });
+            
+            
+				
+        });
+    </script>
 </body>
 </html>
