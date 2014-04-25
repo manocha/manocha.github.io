@@ -116,10 +116,12 @@
                 var roundaboutBearing = $(this).parent().data('roundabout').bearing;
                 var rotate = Math.round(roundaboutBearing - degrees);
                 
-                while(rotate > 180)
+                while(rotate > 180) {
                     rotate = rotate-360;
-                while(rotate < -180)
+                }
+                while(rotate < -180) {
                     rotate = rotate+360;
+                }
                 
                 rotate /= 2;
 
@@ -136,7 +138,7 @@
                 $(this).css({
                     "-webkit-transform": "rotate(" + rotate + "deg)",
                     "-ms-transform": "rotate(" + rotate + "deg)",
-                    "transform": "rotate(" + rotate + "deg)"
+                    "transform": "rotate(" + rotate + "deg)",
                 });
             }})
             $('ul').roundabout({
