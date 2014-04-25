@@ -4,24 +4,75 @@
     background: #E6EDF2;
     text-align: center;
     padding: 24pt 0px;
+    
+    overflow-x: hidden;
 }
 #content {
     font-size: 18pt;
     
     line-height: 1.5em;
     
-    width: 80%;
-    max-width: 1000pt;
+    width: 90%;
+    /*max-width: 1500pt;*/
     margin: auto;
 }
+
+/*item*/
+#content .item {
+    padding: 1em 0;
+    display: table;
+    margin: 0 auto;
+}
+#content .item span {
+    display: inline-block;
+    vertical-align: middle;
+    
+    padding: 0em 1em;
+}
+#content .item span.text {
+    padding: 0.75em 1em;
+}
+#content .item iframe {
+    background: black;
+}
+
+#content .item.extraPadding {
+    padding-top: 2.5em;
+    padding-bottom: 3em;
+}
+#content .item.extraPadding span {
+    padding: 0em 4.75em;
+}
+#content .item.extraPadding span.text {
+    padding: 0.75em 4.75em;
+}
+
+/*headings*/
 #content h2 {
     font-size: 30pt;
     font-weight: 100;
     line-height: 1.5em;
 }
+#content h3 {
+    font-size: 20pt;
+    line-height: 1.2em;
+}
 
+/*em*/
+#content em {
+    font-weight: bold;
+}
+#content h2 em {
+    font-weight: normal;
+}
+
+
+/*images*/
 #content img {
-    width: 12em;
+    height: 15em;
+}
+#content .ios img {
+    height: 20em;
 }
 
 /*

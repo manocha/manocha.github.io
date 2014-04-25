@@ -23,35 +23,45 @@
     </div></div>
     
     <div id="contentContainer">
-    <div id="content">
-        <h2>PlanetRun</h2>
-        <ul>
-            <li><img src="img/planetrun/ui%20mockup.png" /></li>
-            <li><img src="img/planetrun/pause%20menu%20ss.png" /></li>
-            <li><img src="img/planetrun/boss%20fight%20ss.png" /></li>
-            <li><img src="img/planetrun/gameplay%20ss.png" /></li>
-            <li><img src="img/planetrun/ui%20mockup.png" /></li>
-            <li><img src="img/planetrun/gameplay%20ss.png" /></li>
-        </ul>
-        <span>
-            <p>Lead designer on in-development iOS game based around travelling in space, defeating boss ships, and purchasing upgrades with the money you collect in your progress.</p>
-            <p>Lead engineer on &quot;PlanetRun&quot;, assigning other engineers tasks and deadlines, managing technical details and doing major programming work.</p>
-        </span><br />
+    <div id="content">        
+        <div class="item extraPadding">
+            <span><ul class="ios">
+                <li><img src="img/planetrun/ui%20mockup.png" /></li>
+                <li><img src="img/planetrun/pause%20menu%20ss.png" /></li>
+                <li><img src="img/planetrun/boss%20fight%20ss.png" /></li>
+                <li><img src="img/planetrun/gameplay%20ss.png" /></li>
+                <li><img src="img/planetrun/ui%20mockup.png" /></li>
+                <li><img src="img/planetrun/gameplay%20ss.png" /></li>
+            </ul></span>
+            
+            <span class="text">
+                <h2><em>PlanetRun</em> (in-development)</h2>
+                <h3>iOS, Lead Designer/Lead Engineer</h3>
+            </span>
+        </div>
         
-        <h2>Computer Science (Games)</h2>
-        <img src="img/usc.png" />
-        <span>
-            <p>University of Southern California</p>
-            <p>Programming Game Engines. Video Game Programming. Game Design Workshop. Video Game Production. Computer Organization and Architecture. Principles of Software Development. Introduction to Artificial Intelligence. Object-Oriented Programming. Pipelines for Games and Interactives.</p>
-        </span><br />
+        <div class="item">            
+            <span class="text">
+                <h2>FBGT - <em>Brazil</em> (post-production)</h2>
+                <h3>Music Video, Co-Director/Production Designer</h3>
+                <a href="http://igg.me/at/fbgtbrazil/x">IndieGogo</a>
+            </span>
+            
+            <span>
+                <iframe width="640" height="360" src="//www.youtube.com/embed/smATAjHndr8?rel=0" frameborder="0" allowfullscreen></iframe>
+            </span>
+        </div>
         
-        <h2>FBGT - Brazil</h2>
-        <img src="img/brazil.jpg" />
-        <span>
-            <p>Co-Director/Production Designer of music video for hip-hop collective, FBGT</p>
-            <p>Successfully campaigned on IndieGogo to fund professional-level equipment, props, cast, crew, and location</p>
-            <p>Produced and planned an overnight, 16-hour shoot involving a large crew and cast</p>
-        </span><br />
+        <div class="item">
+            <span>
+                <img src="img/usc.png" />
+            </span>
+            
+            <span class="text">
+                <h2>Computer Science (<em>Games</em>)</h2>
+                <h3>University of Southern California</h3>
+            </span>
+        </div>
     </div></div>
     
     <div id="footer">        
@@ -106,6 +116,23 @@
                 var roundaboutBearing = $(this).parent().data('roundabout').bearing;
                 var rotate = Math.round(roundaboutBearing - degrees);
                 
+                while(rotate > 180)
+                    rotate = rotate-360;
+                while(rotate < -180)
+                    rotate = rotate+360;
+                
+                rotate /= 2;
+
+                if(rotate > 55 || rotate < -55) {
+                    $(this).css({
+                        "visibility": "hidden"
+                    });
+                } else {
+                    $(this).css({
+                        "visibility": "visible"
+                    });
+                }
+                
                 $(this).css({
                     "-webkit-transform": "rotate(" + rotate + "deg)",
                     "-moz-transform": "rotate(" + rotate + "deg)",
@@ -113,13 +140,11 @@
                 });
             }})
             $('ul').roundabout({
-                minScale: 0.1,
+                maxScale: 1,
+                minScale: 0.7,
                 duration: 200,
                 enableDrag: true,
             });
-            
-            
-				
         });
     </script>
 </body>
