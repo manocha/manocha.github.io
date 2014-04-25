@@ -47,6 +47,29 @@
     padding: 0.75em 4.75em;
 }
 
+/*links*/
+#content .item a {
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    color: white;
+    background: forestgreen;
+    border: 1px solid forestgreen;
+    
+    border-radius: 5px;
+    padding: 5px 10px;
+    line-height: 3em;
+    
+    transition: 0.25s;
+}
+#content .item a:hover,
+#content .item a:focus {
+	background: green;
+    border: 5px solid green;
+    transition: 0.2s;
+}
+
+
 /*headings*/
 #content h2 {
     font-size: 30pt;
