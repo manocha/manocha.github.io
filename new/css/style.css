@@ -33,11 +33,18 @@ body {
     display: table;
 }
 
-h2 {
-    font-size: 100pt;
-}
 h1 {
     font-size: 172pt;
+}
+h2 {
+    font-size: 64pt;
+    font-weight: 100;
+}
+h2 em {
+    font-weight: normal;
+}
+h3 {
+    font-size: 30pt;
 }
 
 .page_center {
@@ -46,6 +53,35 @@ h1 {
     position: relative;
 
     text-align: center;
+}
+
+.content img, .content iframe {
+    border-radius: 5px;
+    border: 10px solid #FF8C9C;
+}
+.content a, .content a:visited {
+    text-decoration: none;
+    
+    color: #FF8CAD;
+    background: white;
+    border: 3px solid #FF8CAD;
+    
+    padding: 4px 8px;
+    border-radius: 5px;
+    
+    -webkit-transition: 0.25s;
+    -ms-transition: 0.25s;
+    transition: 0.25s;
+}
+.content a:hover, .content a:focus {
+    padding: 6px 12px;
+    
+    background: #fafafa;
+    border: 5px solid #FF8CAD;
+    
+    -webkit-transition: 0.2s;
+    -ms-transition: 0.2s;
+    transition: 0.2s;
 }
 
 #nav_menu_container {
