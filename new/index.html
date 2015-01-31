@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>garv</title>    
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="overlay">
+    </div>
+    
+    <div class="page" id="1">
+        <div id="header">
+            <h1>garv</h1>
+            <a href="#2">next</a>
+        </div>
+    </div>
+
+    <div class="page" id="2">
+        <div id="footer">
+            <h1>garv</h1>
+            <a href="#1">prev</a>
+        </div>
+    </div>
+    
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script>        
+        $('a[href*=#]:not([href=#])').click(function() {
+            if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+               || location.hostname == this.hostname) {
+                
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if(target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 400);
+                    return false;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
