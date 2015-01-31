@@ -33,14 +33,41 @@ body {
     display: table;
 }
 
+h2 {
+    font-size: 100pt;
+}
 h1 {
     font-size: 172pt;
 }
 
-#header, #footer {
+.page_center {
     display: table-cell;
     vertical-align: middle;
     position: relative;
 
     text-align: center;
+}
+
+#nav_menu_container {
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    
+    z-index: 2000;
+}
+#nav_menu {
+    display: inline-block;
+    
+    background: #FF8C9C;
+    
+    padding: 10px;
+    border-radius: 5px;
+}
+#nav_menu a, #nav_menu a:visited {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+#nav_menu a:hover, #nav_menu a:focus {
+    color: #FFBAC3;
 }

@@ -6,25 +6,101 @@
 </head>
 
 <body>
-    <div id="overlay">
+    <div id="overlay"></div>
+    
+    <div class="page" id="project1">
+        <div class="page_center">
+            <h2>Pollen: <em>a bug's haiku</em></h2>
+            <h3>iOS, Co-Designer/Engineer/Artist</h3>
+            <a href="https://itunes.apple.com/us/app/pollen-a-bugs-haiku/id880236358">APP STORE</a>
+            
+            <a href="#home">home</a>
+        </div>
     </div>
     
-    <div class="page" id="1">
-        <div id="header">
-            <h1>garv</h1>
-            <a href="#2">next</a>
+    <div class="page" id="project2">
+        <div class="page_center">
+            <h1>project 2</h1>
+            <a href="#home">home</a>
+        </div>
+    </div>
+    
+    <div class="page" id="project3">
+        <div class="page_center">
+            <h1>project 3</h1>
+            <a href="#home">home</a>
+        </div>
+    </div>
+    
+    <div class="page" id="project4">
+        <div class="page_center">
+            <h1>project 4</h1>
+            <a href="#home">home</a>
         </div>
     </div>
 
-    <div class="page" id="2">
-        <div id="footer">
-            <h1>garv</h1>
-            <a href="#1">prev</a>
+    <div class="page" id="home">
+        <div class="page_center">
+            <h1 id="header">garv</h1>
+            
+            <br /><br />
+            
+            <div id="nav_menu_container">
+                <div id="nav_menu">                
+                    <a href="#project1">pollen</a> |
+                    <a href="#project2">brazil</a> |
+                    <a href="#project3">noir</a> |
+                    <a href="#project4">about</a> |
+                    <a href="#home">home</a>
+                </div>
+            </div>
         </div>
     </div>
     
     <script src="js/jquery-2.1.0.min.js"></script>
-    <script>        
+    <script>
+        //scroll to bottom on load
+        $(document).ready(function() {
+            //animate scroll to bottom
+            $('html,body').animate({
+                scrollTop: $("#home").offset().top
+            }, 2500);
+            
+            //get scroll elements
+            var $header = $('#nav_menu_container');
+            var $body = $('body');
+            var originalHeight = $("#home").offset().top;
+            var fixedHeight = $("#home").height() - ($header.offset().top - originalHeight);
+            
+            console.log(originalHeight);
+            console.log($header.offset().top);
+            console.log($("#home").height());
+            
+            //move links to fixed when scrolled past
+            $(window).scroll(function() {
+                var st = $(this).scrollTop();
+                if(st < originalHeight - fixedHeight) {
+                    $header.css('position', 'fixed');
+                } else {                    
+                    $header.css('position', 'relative');
+                }
+            }).scroll();
+            
+            //reset sizes when window resized
+            $(window).resize(function() {
+                $header.css('position', 'relative');
+                
+                originalHeight = $("#home").offset().top;
+                fixedHeight = $("#home").height() - ($header.offset().top - originalHeight);
+                
+                var st = $(this).scrollTop();
+                if(st < originalHeight - fixedHeight) {
+                    $header.css('position', 'fixed');
+                }
+            });
+        });
+        
+        //smooth scroll to selected # in page
         $('a[href*=#]:not([href=#])').click(function() {
             if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
                || location.hostname == this.hostname) {
