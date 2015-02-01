@@ -3,38 +3,49 @@
     <title>garv</title>    
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/roundabout.css">
 </head>
 
 <body>
     <div id="overlay"></div>
     
-    <div class="page" id="project1">
+    <div class="page" id="pollen">
         <div class="page_center content">
             <h2>Pollen: <em>a bug's haiku</em></h2>
             <h3>iOS (cocos2d), Co-Designer/Engineer/Artist</h3>
             
             <br />
             
-            <img height="500px" src="img/pollen/IMG_1330.PNG" />
-            
-            <br /><br />
+            <span id="ra1"><ul class="ios">
+                <li><img src="img/pollen/tutorial_intro.PNG" /></li>
+                <li><img src="img/pollen/tutorial_p1.PNG" /></li>
+                <li><img src="img/pollen/tutorial_monetization.PNG" /></li>
+                <li><img src="img/pollen/main_menu.PNG" /></li>
+                <li><img src="img/pollen/store.PNG" /></li>
+                <li><img src="img/pollen/haiku.PNG" /></li>
+            </ul></span>
             
             <a href="https://itunes.apple.com/us/app/pollen-a-bugs-haiku/id880236358">APP STORE</a>
         </div>
     </div>
     
-    <div class="page" id="project2">
+    <div class="page" id="noir">
         <div class="page_center content">
             <h2>'Noir'</h2>
             <h3>Board Game, Lead Designer/Artist</h3>
             
             <br />
             
-            <img height="600px" src="img/noir/game_box_top.png" />
+            <img height="525px" src="img/noir/game_box_top.png" />
+            
+            <br /><br />
+            
+            <a href="noir.html">MORE PICTURES</a>
         </div>
     </div>
     
-    <div class="page" id="project3">
+    <div class="page" id="pushpull">
         <div class="page_center content">
             <h2>push<em>/</em>pull</h2>
             <h3>PC/Web (Unity)</h3>
@@ -49,7 +60,7 @@
         </div>
     </div>
     
-    <div class="page" id="project4">
+    <div class="page" id="brazil">
         <div class="page_center content">
             <h2>FBGT - <em>Brazil</em></h2>
             <h3>Music Video, Producer/Production Designer</h3>            
@@ -58,13 +69,13 @@
             
             <iframe src="//player.vimeo.com/video/97260201?byline=0&amp;portrait=0&amp;color=ff9933" width="768" height="432" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             
-            <br /><br /><br />
+            <br /><br />
             
             <a href="http://igg.me/at/fbgtbrazil/x">INDIEGOGO</a>
         </div>
     </div>
     
-    <div class="page" id="project5">
+    <div class="page" id="about">
         <div class="page_center content">
             <h2>hello, world.</h2>
             
@@ -96,31 +107,35 @@
             <div id="nav_menu_container">
                 <div id="nav_menu">
                     <span style="font-size: 14pt">&nbsp;<a id="home_icon" href="#home"><img height="24pt" src="img/home_icon_white.png" /></a>&nbsp;</span>|
-                    <a href="#project1">pollen</a> |
-                    <a href="#project2">noir</a> |
-                    <a href="#project3">p/p</a> |
-                    <a href="#project4">brazil</a> |
-                    <a href="#project5">about</a><span style="font-size: 14pt">&nbsp;</span>
+                    <a href="#pollen">pollen</a> |
+                    <a href="#noir">noir</a> |
+                    <a href="#pushpull">p/p</a> |
+                    <a href="#brazil">brazil</a> |
+                    <a href="#about">about</a><span style="font-size: 14pt">&nbsp;</span>
                 </div>
             </div>
         </div>
     </div>
     
     <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/jquery.roundabout.min.js"></script>
+    <script src="js/jquery.event.drag-2.2.js"></script>
+    <script src="js/jquery.event.drop-2.2.js"></script> 
     <script>
         //scroll to bottom on load
         $(document).ready(function() {
             //animate scroll to bottom    
-            /*$('html,body').animate({
+            $('html,body').animate({
                 scrollTop: $("#home").offset().top
             }, 2500);
-            $("#home_icon").focus();*/
+            $("#home_icon").focus();
             
             //get scroll elements
             var $header = $('#nav_menu_container');
             var $body = $('body');
             var originalHeight = $("#home").offset().top;
-            var fixedHeight = $("#home").height() - ($header.offset().top - originalHeight);
+            var fixedHeight = $("#home").height() - ($header.offset().top - originalHeight)
+                                + $("#ra1").height() - 600;
             
             console.log(originalHeight);
             console.log($header.offset().top);
@@ -147,6 +162,47 @@
                 if(st < originalHeight - fixedHeight) {
                     $header.css('position', 'fixed');
                 }
+            });
+            
+            //set roundabout elements
+            $('li').bind({"reposition": function() {
+                var degrees = $(this).data('roundabout').degrees;
+                var roundaboutBearing = $(this).parent().data('roundabout').bearing;
+                var rotate = Math.round(roundaboutBearing - degrees);
+                
+                while(rotate > 180) {
+                    rotate = rotate-360;
+                }
+                while(rotate < -180) {
+                    rotate = rotate+360;
+                }
+                
+                rotate /= 2;
+
+                if(rotate > 50 || rotate < -50) {
+                    $(this).css({
+                        "visibility": "hidden"
+                    });
+                } else {
+                    $(this).css({
+                        "visibility": "visible"
+                    });
+                }
+                
+                $(this).css({
+                    "-webkit-transform": "rotate(" + rotate + "deg)",
+                    "-ms-transform": "rotate(" + rotate + "deg)",
+                    "transform": "rotate(" + rotate + "deg)"
+                });
+            }})
+            $('ul').roundabout({
+                maxScale: 1,
+                minScale: 0.7,
+                duration: 200,
+                enableDrag: true,
+                autoplay: true,
+                autoplayDuration: 3500,
+                autoplayPauseOnHover: true
             });
         });
         

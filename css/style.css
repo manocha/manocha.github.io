@@ -100,6 +100,11 @@ h3 {
     transition: 0s;
 }
 
+.content .ios img {
+    height: 15.5em;
+    width: 10.3333em;
+}
+
 #nav_menu_container {
     width: 100%;
     left: 0px;
