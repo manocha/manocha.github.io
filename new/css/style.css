@@ -35,6 +35,7 @@ body {
 
 h1 {
     font-size: 172pt;
+    font-weight: 100;
 }
 h2 {
     font-size: 64pt;
@@ -53,6 +54,7 @@ h3 {
     position: relative;
 
     text-align: center;
+    padding: 20px;
 }
 
 .content img, .content iframe {
@@ -79,9 +81,23 @@ h3 {
     background: #fafafa;
     border: 5px solid #FF8CAD;
     
+    border-top-width: 4px;
+    border-bottom-width: 6px;
+    
     -webkit-transition: 0.2s;
     -ms-transition: 0.2s;
     transition: 0.2s;
+}
+.content a:active {
+    border-top-width: 6px;
+    border-bottom-width: 4px;
+    padding: 3px 12px 7px 12px;
+    
+    color: #F0789A;
+    
+    -webkit-transition: 0s;
+    -ms-transition: 0s;
+    transition: 0s;
 }
 
 #nav_menu_container {
@@ -103,7 +119,11 @@ h3 {
     color: white;
     text-transform: uppercase;
     text-decoration: none;
+    
+    outline: 0;
+    opacity: 1;
 }
 #nav_menu a:hover, #nav_menu a:focus {
-    color: #FFBAC3;
+    /*color: #FFBAC3;*/
+    opacity: 0.5;
 }
