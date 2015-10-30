@@ -5,6 +5,8 @@ body {
 
     padding-top: 45px;
     text-align: center;
+
+    overflow-x: hidden;
 }
 
 /*text elements*/
