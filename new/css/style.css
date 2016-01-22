@@ -1,0 +1,129 @@
+body {
+    background: #a5a6a9;
+    color: #dfe0e2;
+
+    //font-family: "Poiret One", Futura, "Futura LT", "San Francisco", Helvetica, Tahoma, sans-serif;
+    font-family: "Fugaz One", sans-serif;
+}
+
+h1 {
+    font-size: 100pt;
+}
+h2 {
+    font-size: 36pt;
+    padding-bottom: 2em;
+}
+p {
+    font-size: 48pt;
+}
+
+#navigation_container {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+
+    width: 100%;
+}
+#navigation {
+    width: 11.0em;
+    margin-left: auto;
+    margin-right: auto;
+
+    position:relative;
+    text-align: center;
+
+    background: #b7c7bd;
+    border: 8px solid #eaded0;
+    border-bottom: none;
+
+    border-radius: 2px 2px 0px 0px;
+
+    padding-top: 0.25em;
+    padding-bottom: 0.2em;
+
+    font-size: 36pt;
+}
+#navigation:before {
+    position:absolute;
+    right:0px;
+    bottom:0px;
+
+    content:'';
+
+    border-top: 20px solid transparent;
+    border-right: 20px solid #eaded0;
+}
+#navigation:after {
+    position:absolute;
+    left:0px;
+    top:0px;
+
+    content:'';
+
+    border-top: 20px solid #eaded0;
+    border-right: 20px solid transparent;
+}
+
+#navigation, #navigation a, #navigation a:visited {
+    color: #0f0a01;
+}
+#navigation a, #navigation a:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+
+    outline: 0;
+    opacity: 1;
+}
+#navigation a:hover, #navigation a:focus {
+    opacity: 0.7;
+}
+
+
+#content {
+    height: 100%;
+
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+.page {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: bottom;
+    width: 100%;
+
+    height: auto;
+    min-height: 100%;
+
+    padding: 50px;
+
+    box-sizing: border-box;
+    border: 20px solid black;
+
+    color: red;
+    text-align: center;
+}
+
+#header {
+    text-transform: lowercase;
+
+    background: #dd6464;
+    color: #e4e6dd;
+
+    border-color: #f45844;
+}
+#header h1 {
+    font-size: 140pt;
+
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+#header h2 {
+    font-size: 42pt;
+}
+
+#header_text {
+    padding-top: 19%;
+}
