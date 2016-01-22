@@ -65,11 +65,23 @@
 
 	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			//animate scroll to bottom
-			$('html,body').animate({
-				scrollTop: $("#header").offset().top
-			}, 250);
+		//smooth scroll to selected # in page
+		$('a[href*=#]:not([href=#])').click(function() {
+			if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+			   || location.hostname == this.hostname) {
+
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+				if(target.length) {
+					$('html,body').animate({
+						scrollTop: target.offset().top
+					}, 450);
+					$('html,body').animate({
+						scrollLeft: target.offset().left
+					}, 450);
+					return false;
+				}
+			}
 		});
     </script>
 </body>
