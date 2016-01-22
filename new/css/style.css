@@ -88,7 +88,7 @@ p {
 .page {
     display: inline-block;
     white-space: normal;
-    vertical-align: bottom;
+    vertical-align: top;
     width: 100%;
 
     height: auto;
