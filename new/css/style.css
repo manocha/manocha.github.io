@@ -4,10 +4,12 @@ body {
 
     //font-family: "Poiret One", Futura, "Futura LT", "San Francisco", Helvetica, Tahoma, sans-serif;
     font-family: "Fugaz One", sans-serif;
+
+    overflow-x: hidden;
 }
 
 h1 {
-    font-size: 100pt;
+    font-size: 72pt;
 }
 h2 {
     font-size: 36pt;
@@ -15,6 +17,9 @@ h2 {
 }
 p {
     font-size: 48pt;
+}
+em {
+    font-weight: bold;
 }
 
 #navigation_container {
@@ -25,7 +30,7 @@ p {
     width: 100%;
 }
 #navigation {
-    width: 11.0em;
+    width: 11.2em;
     margin-left: auto;
     margin-right: auto;
 
@@ -41,7 +46,9 @@ p {
     padding-top: 0.25em;
     padding-bottom: 0.2em;
 
-    font-size: 36pt;
+    font-size: 34pt;
+
+    z-index: 1000;
 }
 #navigation:before {
     position:absolute;
@@ -81,9 +88,7 @@ p {
 
 #content {
     height: 100%;
-
     white-space: nowrap;
-    overflow-x: hidden;
 }
 .page {
     display: inline-block;
@@ -97,7 +102,7 @@ p {
     padding: 50px;
 
     box-sizing: border-box;
-    border: 20px solid black;
+    border: 30px solid black;
 
     color: red;
     text-align: center;
@@ -106,24 +111,41 @@ p {
 #header {
     text-transform: lowercase;
 
-    background: #dd6464;
+    background: #f45844;
     color: #e4e6dd;
 
-    border-color: #f45844;
+    border-color: #f43530;
+
+    z-index: 0;
 }
+#header:before {
+	content: "";
+	display: block;
+	position: absolute;
+
+    top: 30px;
+	left: 30px;
+    right: 30px;
+    bottom: 30px;
+
+    border: solid 15px #dd6464;
+
+    z-index: 1;
+    pointer-events: none;
+}
+#header_text {
+    padding-top: 19%;
+}
+
 #header h1 {
     font-size: 140pt;
 
     text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 #0f0a01,
+    1px -1px 0 #0f0a01,
+    -1px 1px 0 #0f0a01,
+    1px 1px 0 #0f0a01;
 }
 #header h2 {
     font-size: 42pt;
-}
-
-#header_text {
-    padding-top: 19%;
 }
