@@ -54,12 +54,28 @@ a:focus {
     text-align: center;
 }
 
+.page>img {
+    max-width: 90%;
+    border-radius: 2px;
+    border: 9px solid #0f0a01;
+
+    vertical-align: top;
+    margin: 20px;
+}
+
+.page img.small {
+    width: 180px;
+}
+.page img.big {
+    width: 450px;
+}
+
 .page .circle_image {
     display: inline-block;
 
     width: 300px;
     height: 300px;
-    margin: 20px;
+    margin: 0px 20px;
 
     background: #eaded0;
     border: 12px solid #0f0a01;
@@ -73,6 +89,7 @@ a:focus {
     min-height: 100%;
     height:auto;
 
+    margin: 0px;
     vertical-align: middle;
 
     position: absolute;
@@ -80,11 +97,12 @@ a:focus {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.page>img {
-    max-width: 100%;
-    border-radius: 2px;
+
+.page iframe {
     border: 8px solid #0f0a01;
+    border-radius: 2px;
 }
+
 
 .page a, .page a:visited {
     text-decoration: none;
@@ -115,10 +133,6 @@ a:focus {
     background: #006400;
 }
 
-.page iframe {
-    border: 8px solid #0f0a01;
-    border-radius: 2px;
-}
 
 #about_text {
     padding: 0;
