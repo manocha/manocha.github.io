@@ -1,79 +1,142 @@
 <html>
 <head>
-    <title>ICU</title>
-
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab:400,700italic,700,600italic,600,400italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
+    <title>I.C.U. - The Greatest Game Show On Earth!</title>
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-    <div id="navigation">
-        <ul>
-            <li><a href="#logo">I&middot;C&middot;U</a></li>
-            <li><a href="#media">MEDIA</a></li>
-            <li><a href="#about">ABOUT</a></li>
+    <!--
+        logo/home/main video
+        about (short description of game)
+        media (screenshots + gifs)
+        links (different websites and reviews)
+        social media (facebook, twitter, email, youtube, twitch)
+        footer with copyright (
+            Designed and developed by team ok and friends.
+            A USC Advanced Games project.
+        )
+    //-->
 
-            <!--
-            home, about, play, news, press kit, sensors, support, contact us
-            press, watch, play
-            audition, cast, tickets
-            price is right, win at home, cast, games, calendar, videos
-            //-->
-        </ul>
+    <!-- logo/home/main video -->
+    <div id="header">
+        <img class="center" id="logo" src="img/icu_logo.png" />
+        <img class="center screenshot" src="img/poster_complete01.jpg" />
+        <!--<iframe class="center video" src="https://www.youtube.com/embed/Zs-FKPm1TNM" frameborder="0" allowfullscreen></iframe>//-->
     </div>
 
-    <img id="logo" src="img/icu_logo_v3.png" />
+    <!-- about (short description of game) -->
+    <div class="single_box">
+        <h1>Welcome to ICU!</h1>
 
-    <div class="mediaWrapper">
-    <div class="media" id="media">
-        <div class="videoWrapper">
-            <iframe src="https://www.youtube.com/embed/h5RdNyXsFEc" frameborder="0" allowfullscreen></iframe>
+        <br/>
+
+        <div class="single_split">
+            <span>
+                <iframe class="video" src="https://www.youtube.com/embed/Zs-FKPm1TNM" frameborder="0" allowfullscreen></iframe>
+            </span>
+
+            <span class="split_text">
+                <p>As each unsuspecting contestant forays into one of the countless Monster Rooms, it is YOUR job as the audience to enjoy their pain and realize their worst nightmares.</p>
+                <br />
+                <h3>So come on and be a part of the greatest spectator sport to have ever existed!</h3>
+            </span>
         </div>
     </div>
+
+
+    <!-- media (screenshots + gifs) -->
+    <div class="double_box">
+        <div><span class="highlight_box">
+            <h3>Episode One:</h3>
+            <h2> Alone in the Woods</h2>
+        </span></div>
+
+        <div>
+            <img src="img/gifs/SwampGif.gif" />
+        </div>
     </div>
 
-    <div class="contentWrapper">
-    <div class="content" id="about">
-        <h2>Can you keep your eyes open?</h2>
+    <div class="double_box">
+        <div>
+            <img src="img/gifs/FogStatue.gif" />
+        </div>
 
-        <p>Look on as witless contestant after contestant forays into any one of our countless Monster Rooms, trying their luck to survive and make it out alive. As we challenge their vision and make them discern the real from the fake, it is the job of the audience to watch and vote to <em>enhance</em> their experience.</p>
-        <p>Come and be a part of the greatest spectator sport to have ever existed!</p>
+        <div><span>
+            <!--<p>Are those shattered statues under the bridge a struggling artist's abandonded projects - or discarded remains of an otherworldly dinner?</p>//-->
+            <h4>Starring:</h4>
+            <p>The discarded remains of last week's contestants!</p>
+        </span></div>
+    </div>
 
-        <img src="img/hub_world_alpha_ss.png" />
+    <div class="double_box">
+        <div><span>
+            <!--<p>Are your eyes simply playing tricks on you, or is there something actually hiding in the corner of your vision: watching, stalking,... hunting?</p>//-->
+            <h4>Co-Starring:</h4>
+            <p>A mystical statue creature come to life, stalking you through the trees!</p>
+        </span></div>
 
-        <h3>The First Season:</h3>
-        <h2> Alone in the Woods</h2>
+        <div>
+            <img style="filter: saturate(350%) brightness(115%) contrast(110%);" src="img/gifs/MonsterFreeze.gif" />
+        </div>
+    </div>
 
-        <p>As you walk into the woods, hearing the soft churning of the fog and a waterfall in the distance, you slowly realize something is not as it should be. Are those shattered statues under the bridge discarded projects -- or something else much more malevolent entirely?</p>
+    <div class="double_box">
+        <div>
+            <img src="img/gifs/HubGif.gif" />
+        </div>
 
-        <img src="img/sharon_idle_model.jpg" />
+        <div><span>
+            <!--<p>The harder you try to avoid what lurks in the shadows, the more your "loving" audience will force you... to face your fears.</p>//-->
+            <h4>Special Guest:</h4>
+            <p>All brought to you by a misfortune-loving audience!</p>
+        </span></div>
+    </div>
 
-        <p>Did the statue that you thought you saw out of the corner of your eye just disappear?</p>
-
-        <img src="img/sharon_alert_model.jpg" />
-
-        <p>Are those glowing eyes in the distance? The feeling that you're being trailed grows stronger and stronger as you get deeper in the forest. If your heart is racing and you feel a sense of indomitable fear...</p>
-
-        <img src="img/sharon_hunt_model.jpg" />
-        <!--<img src="img/sharon_idle_poster.png" />//-->
-
-        <p>...you're doing it right.</p>
-        <p style="text-align: center;">Good luck! I hope you'll be ready.</p>
-
-        <img id="showrunner" src="img/showrunner.png" />
-        <div id="poster">
-            <p>download the poster!</p>
+    <!-- downloads to stuff -->
+    <!--
+    <div class="double_box">
+        <div>
             <a href="img/sharon_idle_poster.png" download="sharon_idle_poster.png"><img src="img/sharon_idle_poster.png" /></a>
         </div>
+
+        <div><span>
+            <h2>download the poster!</h2>
+        </span></div>
     </div>
+    //-->
+
+    <div class="single_box">
+        <h2 style="text-align: center;">Scream, you're on camera!</h2>
     </div>
 
-    <div id="footer">
-        <form>Join our Mailing List<br/><input type="text" name="email"></form>
-        <p><a href="mailto:icu@criken.com">icu@criken.com</a></p>
-        <p>AGP - <a href="http://games.usc.edu/">USC Games</a></p>
+    <!-- social media (facebook, twitter, email, youtube, twitch) -->
+
+    <div class="footer">
+        <a href="mailto:icu@criken.com">
+        <img src="img/share_icons/mail_icon.png" /></a>
+
+        <a href="http://facebook.com/coming_soon_404">
+        <img src="img/share_icons/facebook_icon.png" /></a>
+
+        <a href="http://twitter.com/icu_show">
+        <img src="img/share_icons/twitter_icon.png" /></a>
+
+        <a href="http://twitch.tv/icushow">
+        <img src="img/share_icons/twitch_icon.png" /></a>
+
+        <a href="http://youtube.com/coming_soon_404">
+        <img src="img/share_icons/youtube_icon.png" /></a>
+
+        <p>Advanced Games Project - <a class="text_link" href="http://games.usc.edu/">USC Games</a></p>
     </div>
+
+    <!--
+    footer with copyright (
+        Designed and developed by team ok and friends.
+        A USC Advanced Games project.
+    )
+    //-->
 </body>
 </html>
