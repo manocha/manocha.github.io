@@ -257,10 +257,10 @@ body {
 }
 .project iframe#brazil_video {
     min-width: 600px;
-    min-height: 450px;
+    min-height: 337.5px;
 
-    width: 48vw;
-    height: 36vw;
+    width: 60vw;
+    height: 33.75vw;
 
     margin: 20px 0 0 0;
 }
