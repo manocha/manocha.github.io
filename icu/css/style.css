@@ -119,7 +119,7 @@ p {
 }
 
 .single_box p, .single_box h3 {
-    font-size: 34pt;
+    font-size: 33pt;
     font-family: "Intro", Helvetica, sans-serif;
 
     line-height: 1.2em;
@@ -128,7 +128,7 @@ p {
 .single_box h3 {
     font-style: italic;
     font-weight: bold;
-    font-size: 37pt;
+    font-size: 36pt;
 }
 .single_box>br {
     font-size: 20pt;
@@ -149,7 +149,7 @@ p {
 .single_split span iframe {
     background: black;
     width: 800px;
-    height: 480px;
+    height: 450px;
 
     border: 1px solid white;
     border-bottom-width: 3px;
