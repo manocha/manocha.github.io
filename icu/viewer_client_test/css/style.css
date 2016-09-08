@@ -1,0 +1,201 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background: red;
+
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*interaction*/
+#interaction {
+    background: black;
+    border-right: 1px solid #555;
+
+    font-family: sans-serif;
+    color: white;
+
+    width: 18vw;
+    height: 100vh;
+
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+
+    overflow-x: visible;
+}
+
+.interactable {
+    display: inline-block;
+    width: 100%;
+
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+
+    /*background: #222;*/
+    /*border-bottom: 3px groove #333;*/
+}
+.interactable:first-of-type {
+    margin-top: 7px;
+}
+
+.heading {
+    background: black;
+    position: relative;
+
+    border: 2px solid white;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 4px;
+
+    margin-bottom: 10px;
+    margin-right: -1px;
+}
+
+#interaction .heading h1 {
+    display: inline-block;
+    vertical-align: middle;
+
+    font-family: "Lemon/Milk";
+    font-size: 29pt;
+    text-transform: uppercase;
+
+    padding: 7px calc(45pt - 2px) 8px 5px;
+}
+
+#interaction .heading .pie_timer {
+    display: inline-block;
+    vertical-align: middle;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(7px, -50%);
+
+    width: 45pt;
+    height: 45pt;
+
+    border-radius: 50%;
+
+    background: black;
+    border: 3px solid white;
+}
+
+#interaction .vote_button {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    box-sizing: border-box;
+
+    width: 42%;
+    height: 110px;
+    margin: 8px 5px;
+
+    border-radius: 2px;
+}
+#interaction a.vote_button,
+#interaction a.vote_button:visited {
+    background: white;
+    color: black;
+
+    //border: 5px solid white;
+}
+#interaction a.vote_button:hover,
+#interaction a.vote_button:active {
+    background: #eee;
+    color: #333;
+
+    //border: 5px solid white;
+}
+
+#interaction .vote_button h2 {
+    display: inline-block;
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 5px;
+
+    word-wrap: break-word;
+    hyphens: manual;
+
+    font-family: "Gotham Pro";
+    font-size: 19pt;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/*stream*/
+#stream {
+    width: 66vw;
+    height: 37.125vw;
+
+    /*min-width: 600px;
+    min-height: 337.5px;*/
+}
+
+
+/*status*/
+#status {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+    position: relative;
+
+    width: 66vw;
+    height: calc(100vh - 37.125vw);
+
+    background: black;
+    color: white;
+
+    border: 2px solid white;
+    border-bottom-width: 5px;
+
+    padding: 10px;
+}
+#status .content {
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#status h1, h2, h3 {
+    display: inline;
+    vertical-align: middle;
+}
+
+#status h1 {
+    font-size: 42pt;
+    font-family: "Karla";
+}
+#status h2 {
+    font-size: 56pt;
+    font-family: "Intro";
+    font-weight: 900;
+}
+#status h3 {
+    font-size: 30pt;
+    font-family: "Lemon/Milk";
+}
+
+/*chat*/
+#chat {
+    width: 16vw;
+    height: 100vh;
+
+    float: right;
+}
+
+iframe#chat * {
+    font-size: 48pt !important;
+}
