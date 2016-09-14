@@ -1,0 +1,217 @@
+<html>
+<head>
+    <title>I.C.U. Viewer Client Test</title>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="interaction">
+        <span class="interactable">
+            <div class="heading">
+                <h1>Shack Vote</h1>
+                <div class="pie_timer" id="vote_timer">
+                    <div class="mask"></div>
+                    <div class="spinner pie"></div>
+                    <div class="filler pie"></div>
+                </div>
+            </div>
+
+            <!--
+            drunkard
+            shrinking -- won
+
+            squinting
+            dunrkard -- won
+            //-->
+
+            <a href="#" class="vote button">
+                <h2>Squint&shy;ing</h2>
+                <div class="progress" id="progress_less">
+                    <div class="fill"></div>
+                </div>
+            </a>
+            <a href="#" class="vote button">
+                <h2>Drunkard</h2>
+                <div class="progress" id="progress_more">
+                    <div class="fill"></div>
+                </div>
+            </a>
+        </span>
+
+        <span class="interactable">
+            <div class="heading">
+                <h1>Trick Store</h1>
+                <div class="pie_timer" id="trick_timer">
+                    <div class="mask"></div>
+                    <div class="spinner pie"></div>
+                    <div class="filler pie"></div>
+                </div>
+            </div>
+
+            <a href="#" class="trick button">
+                <h2>Instant Slap</h2>
+                <h3>&#11042;400</h3>
+            </a>
+            <a href="#" class="trick button">
+                <h2>Force Push</h2>
+                <h3>&#11042;650</h3>
+            </a>
+            <a href="#" class="trick button">
+                <h2>Force Jump</h2>
+                <h3>&#11042;550</h3>
+            </a>
+            <a href="#" class="trick button">
+                <h2>Glitch Screen</h2>
+                <h3>&#11042;600</h3>
+            </a>
+
+            <a href="#" class="reaction button">
+                <img src="img/Kappa.png" />
+                <h3>&#11042;50</h3>
+            </a>
+            <a href="#" class="reaction button">
+                <img src="img/4Head.png" />
+                <h3>&#11042;50</h3>
+            </a>
+            <a href="#" class="reaction button">
+                <img src="img/WutFace.png" />
+                <h3>&#11042;50</h3>
+            </a>
+
+            <a href="#" class="trick button">
+                <h2>Monster Hat</h2>
+                <h3>&#11042;2000</h3>
+            </a>
+        </span>
+    </div>
+
+    <!--src="http://player.twitch.tv/?channel=sing_sing"//-->
+    <!--src="http://player.twitch.tv/?video=v70767341"//-->
+    <iframe
+        id="stream"
+
+        src="http://player.twitch.tv/?video=v88145462"
+
+        width="1280"
+        height="720"
+
+        frameborder="0"
+        scrolling="no"
+        allowfullscreen="true">
+    </iframe>
+
+    <iframe
+        id="chat"
+
+        src="http://www.twitch.tv/strippin/chat"
+
+        width="100"
+        height="100"
+
+        frameborder="0"
+        scrolling="no">
+    </iframe>
+
+    <div id="status">
+        <div class="minimap">
+            <img class="map" src="img/minimap.jpg" />
+            <img class="player" src="img/player_arrow.png" />
+        </div>
+
+        <div class="feed">
+            <div class="feed_content">
+                <h3>joemagoe just spent <em>&#11042;550</em> on <em>Force Jump</em></h3>
+                <h4>brownbadger24 just voted for <em>Shrinking</em></h4>
+                <h4>joemagoe just voted for <em>Shrinking</em></h4>
+                <h4>salaMnaCer just voted for <em>Drunkard</em></h4>
+                <h3>slapboy2001 just spent <em>&#11042;400</em> on <em>Instant Slap</em></h3>
+                <h4>big_boy_in_big_bog just voted for <em>Shrinking</em></h4>
+                <h4>somebody_s6_woman just voted for <em>Drunkard</em></h4>
+                <h4>AdmiralCuckerson just voted for <em>Shrinking</em></h4>
+            </div>
+        </div>
+
+        <div class="profile">
+            <div class="prof_text">
+                <h1>joemagoe</h1>
+                <h2>&#11042;33458</h2>
+            </div>
+            <div class="right">
+                <img class="badge" src="img/crown_badge.png" />
+                <div class="prof_pic">
+                    <img src="img/joemagoe.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript">
+        $(".vote").click(function() {
+            var duration = 45;
+            var parentElement = "#vote_timer";
+                var maskElement = parentElement + " .mask";
+                var spinnerElement = parentElement + " .spinner";
+                var fillerElement = parentElement + " .filler";
+            var elements = maskElement + ", " + spinnerElement + ", " + fillerElement;
+
+            $(elements).css("animation", "none");
+            $(".vote .progress .fill").css("animation", "none");
+            $(".vote .progress .fill").css("width", "0%");
+            setTimeout(function() {
+                $(elements).css("animation", "");
+                $(elements).css("animation-duration", duration + "s");
+                $(elements).css("animation-play-state", "running");
+
+                $(".vote .progress .fill").css("animation", "");
+                $(".vote .progress .fill").css("width", "");
+                $(".vote .progress .fill").css("animation-play-state", "running");
+            }, 10);
+
+            $(elements).on('animationend', function() {
+                setTimeout(function() {
+                    $(elements).css("animation-play-state", "paused");
+                    $(".vote .progress .fill").css("animation", "none");
+                    setTimeout(function() {
+                        $(".vote .progress .fill").css("animation", "");
+                        $(".vote .progress .fill").css("width", "");
+                    }, 10);
+                }, 10);
+            });
+            $(".vote .progress .fill").on('animationend', function() {
+                setTimeout(function() {
+                    $(".vote .progress .fill").css("animation-play-state", "paused");
+                }, 10);
+            });
+        });
+
+        $(".trick, .reaction").click(function(event) {
+            var duration = 3;
+            var parentElement = "#trick_timer";
+                var maskElement = parentElement + " .mask";
+                var spinnerElement = parentElement + " .spinner";
+                var fillerElement = parentElement + " .filler";
+            var elements = maskElement + ", " + spinnerElement + ", " + fillerElement;
+
+            $(elements).css("animation", "none");
+            setTimeout(function() {
+                $(elements).css("animation", "");
+                $(elements).css("animation-duration", duration + "s");
+                $(elements).css("animation-play-state", "running");
+
+                $(".trick, .reaction").css("background-color", "#aaa");
+                $(event.target).css("background-color", "#fff");
+            }, 10);
+
+            $(elements).on('animationend', function() {
+                setTimeout(function() {
+                    $(elements).css("animation-play-state", "paused");
+                    $(".trick, .reaction").css("background-color", "");
+                }, 10);
+            });
+        });
+    </script>
+</body>
+</html>
