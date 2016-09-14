@@ -212,6 +212,7 @@
                 setTimeout(function() {
                     $(elements).css("animation-play-state", "paused");
                     $(".trick, .reaction").css("background-color", "");
+                    $(event.target).css("background-color", "");
                 }, 10);
             });
         });
