@@ -24,8 +24,8 @@
 body {
     font-family: Helvetica, sans-serif;
 
-    background-color: #111;
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255,255,255,.08) 25px, rgba(255,255,255,.08) 50px);
+    background-color: #0D0D0D;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,.06) 30px, rgba(255,255,255,.06) 60px);
 
     overflow: hidden;
     box-sizing: border-box;
