@@ -1,6 +1,31 @@
+/*font faces*/
+@font-face {
+    font-family: "Lemon/Milk";
+    src: url("../fonts/LEMON MILK.otf") format("truetype");
+}
+@font-face {
+    font-family: "Intro";
+    src: url("../fonts/INTRO.otf") format("truetype");
+}
+@font-face {
+    font-family: "Intro";
+    src: url("../fonts/INTRO BOLD.otf") format("truetype");
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Karla";
+    src: url("../fonts/KARLA.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("../fonts/GOTHAM PRO.otf") format("truetype");
+}
+
 body {
     font-family: Helvetica, sans-serif;
-    background: #222;
+
+    background-color: #111;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255,255,255,.08) 25px, rgba(255,255,255,.08) 50px);
 
     overflow: hidden;
     box-sizing: border-box;
@@ -372,6 +397,7 @@ body {
 
     width: 66vw;
     height: calc(100vh - 37.125vw);
+    max-height: 300px;
 
     background: black;
     color: white;
@@ -384,16 +410,22 @@ body {
 
 #status .minimap {
     display: block;
-    position: absolute;
     z-index: 1;
 
-    top: -4px;
-    left: 24px;
-    width: calc(100vh - 37.125vw - 24px);
-    height: calc(100vh - 37.125vw - 24px);
+    position: relative;
+    margin: 2px 20px 0px 4px;
+
+    float: left;
+    top: 0;
+
+    width: calc(100vh - 37.125vw - 32px);
+    height: calc(100vh - 37.125vw - 32px);
+    max-width: 268px;
+    max-height: 268px;
 
     background: black;
-    border: 1px solid white;
+    border: 3px double #777;
+    box-sizing: border-box;
 
     cursor: pointer;
 }
@@ -435,11 +467,13 @@ body {
 }
 
 #status .feed {
-    margin-left: calc(100vh - 37.125vw + 6px);
-    margin-right: 410px;
+    /*margin-left: calc(100vh - 37.125vw - 4px);*/
+    margin-right: 400px;
 
-    border-left: 8px solid white;
-    padding-left: 9px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-left: 6px solid #ccc;
+    padding-left: 4px;
 
     text-align: left;
 
@@ -457,6 +491,7 @@ body {
 #status .feed h4 {
     display: inline-block;
     white-space: pre-line;
+    position: relative;
 
     font-family: "Intro";
 
@@ -464,12 +499,14 @@ body {
     padding-right: 22px;
     margin: 0;
 
-    border: 1px solid #111;
+    border: 1px solid #181818;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
 }
 #status .feed h3 em,
 #status .feed h4 em {
     color: white;
-    text-shadow: 0 0 1px #ddd;
+    text-shadow: 0 0 2px #bbb;
 }
 
 #status .feed h3 {
@@ -480,13 +517,26 @@ body {
     border-right: 6px solid #F55757;
 }
 #status .feed h4 {
-    font-size: 16pt;
+    font-size: 15pt;
     color: #ddd;
 
     background: #222;
     border-right: 4px solid #ddd;
 }
 
+#status .feed h3:after {
+    content: "";
+    width: 18px;
+    height: 18px;
+
+    position: absolute;
+    right: -3px;
+    top: 50%;
+    transform: translate(50%, -50%);
+
+    background: #F55757;
+    border-radius: 50%;
+}
 
 #status .profile {
     display: flex;
