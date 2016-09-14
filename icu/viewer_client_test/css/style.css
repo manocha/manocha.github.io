@@ -538,6 +538,7 @@ body {
     border-radius: 50%;
 }
 
+
 #status .profile {
     display: flex;
     align-items: center;
@@ -599,6 +600,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 #status .profile .right .badge {
     position: absolute;
     top: -6px;
@@ -607,6 +609,23 @@ body {
 
     width: 32px;
     height: auto;
+}
+#status .profile .right .level {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    padding: 0px 2px 0px 1px;
+
+    background: #eee;
+    border-radius: 2px;
+    border: 1px solid #cfcfcf;
+}
+#status .profile .right .level h3 {
+    font-family: "Karla";
+    font-size: 12pt;
+    color: #333;
 }
 
 /*chat*/
