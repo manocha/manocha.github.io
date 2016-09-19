@@ -78,7 +78,7 @@ body {
     border-bottom-width: 4px;
 
     margin-bottom: 10px;
-    margin-right: -1px;
+    /*TODO UNCOMMENT*//*margin-right: -1px;*/
 }
 
 #interaction .heading h1 {
@@ -89,7 +89,7 @@ body {
     font-size: 29pt;
     text-transform: uppercase;
 
-    padding: 7px calc(45pt - 2px) 8px 5px;
+    padding: 7px calc(45pt + 7px) 8px 5px;
 }
 
 
@@ -101,7 +101,8 @@ body {
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translate(7px, -50%);
+    /*TODO UNCOMMENT*//*transform: translate(7px, -50%);*/
+    transform: translate(-2px, -50%);
 
     width: 45pt;
     height: 45pt;
@@ -290,6 +291,7 @@ body {
 #interaction .button .progress {
     display: inline-block;
     box-sizing: border-box;
+    pointer-events: none;
 
     width: 85%;
     height: 8px;
@@ -318,7 +320,7 @@ body {
     border-radius: 5px;
     background: black;
 
-    animation: linear 12s;
+    animation: linear 15s;
     animation-play-state: paused;
 }
 
@@ -333,13 +335,13 @@ body {
 
 @keyframes progress_less {
   0%, 10%   { width: 0%; }
-  50%       { width: 20%; }
-  65%, 100% { width: 30%; }
+  55%       { width: 25%; }
+  70%, 100% { width: 30%; }
 }
 @keyframes progress_more {
   0%   { width: 0%; }
-  15%  { width: 10%; }
-  65%  { width: 70%; }
+  10%  { width: 15%; }
+  60%  { width: 70%; }
   75%, 100% { width: 75%; }
 }
 

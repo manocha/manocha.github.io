@@ -152,7 +152,7 @@
 
     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 	<script type="text/javascript">
-        $(".vote").click(function() {
+        $(".vote").click(function(event) {
             var duration = 45;
             var parentElement = "#vote_timer";
                 var maskElement = parentElement + " .mask";
@@ -171,12 +171,19 @@
                 $(".vote .progress .fill").css("animation", "");
                 $(".vote .progress .fill").css("width", "");
                 $(".vote .progress .fill").css("animation-play-state", "running");
+
+                $(".vote").css("background-color", "#aaa");
+                $(event.target).css("background-color", "#fff");
             }, 10);
 
             $(elements).on('animationend', function() {
                 setTimeout(function() {
                     $(elements).css("animation-play-state", "paused");
                     $(".vote .progress .fill").css("animation", "none");
+
+                    $(".vote").css("background-color", "");
+                    $(event.target).css("background-color", "");
+
                     setTimeout(function() {
                         $(".vote .progress .fill").css("animation", "");
                         $(".vote .progress .fill").css("width", "");
