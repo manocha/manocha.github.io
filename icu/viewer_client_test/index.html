@@ -223,6 +223,29 @@
                 }, 10);
             });
         });
+
+        var rollingDown = false;
+        $('body').keyup(function(e) {
+           if(e.keyCode == 32){
+               if(!rollingDown) {
+                   rollingDown = true;
+
+                   var startCoins = 33458;
+                   var endCoins = 32808;
+                   var currencyChar = "&#11042;";
+
+                   var intervalFunction = setInterval(function() {
+                       startCoins -= 5;
+                       $(".prof_text h2").html(currencyChar + startCoins);
+
+                       if(startCoins <= endCoins) {
+                           rollingDown = false;
+                           clearInterval(intervalFunction);
+                       }
+                   }, 20);
+               }
+           }
+        });
     </script>
 </body>
 </html>
