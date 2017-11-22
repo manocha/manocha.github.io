@@ -1,1 +1,119 @@
+/*FONT FACES*/
+@font-face {
+    font-family: "Intro";
+    src: url("../fonts/INTRO.otf") format("truetype");
+}
+@font-face {
+    font-family: "Intro";
+    src: url("../fonts/INTRO BOLD.otf") format("truetype");
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Karla";
+    src: url("../fonts/KARLA.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Sitka Heading";
+    src: url("../fonts/Sitka.ttf") format("truetype"),
+		url("../fonts/SitkaZ.ttf") format("truetype"),
+		url("../fonts/SitkaB.ttf") format("truetype"),
+		url("../fonts/SitkaI.ttf") format("truetype");
+}
 
+/*STYLES*/
+em { font-style: italic; }
+
+body {
+	text-align: center;
+
+	background: rgb(14, 13, 14);
+	color: white;
+}
+
+h1 {
+	font-size: 40pt;
+	font-family: "Karla", Arial, serif;
+	font-weight: bold;
+	line-height: 1.5em;
+	//color: rgb(232, 217, 228);
+}
+
+h1::after {
+	content: "!";
+
+	display: inline-block;
+	transform: rotate(10deg);
+	padding-left: 5px;
+}
+
+h2 {
+	font-size: 20pt;
+	text-transform: uppercase;
+	font-family: "Intro", "Helvetica", Arial, sans-serif;
+	font-weight: lighter;
+	line-height: 1.25em;
+	color: rgb(176, 159, 171);
+}
+
+.container {
+	display: inline-block;
+	position: absolute;
+	top: 40%; left: 50%;
+	transform: translate(-50%, -40%);
+	width: 400pt;
+
+	padding: 20px;
+	background: rgb(31, 27, 31);
+
+	border-radius: 5px;
+	box-shadow: 6px 8px 0px 0px rgba(0,0,0, 0.5);
+}
+
+.container>ol, .container>ul {
+	text-align: left;
+	margin-left: 15pt;
+	margin-top: 15pt;
+	padding-top: 15pt;
+
+	font-size: 14pt;
+	font-family: "Sitka Heading", "Times New Roman", serif;
+	line-height: 1.75em;
+	list-style: decimal outside;
+
+	border-top: 2px solid rgb(101, 60, 83);
+	color: rgb(176, 159, 171);
+}
+.container>ul { list-style-type: disc; }
+
+ol>ul, ul>ul {
+	font-size: 11pt;
+	line-height: 1.5em;
+	color: rgb(160, 160, 160);
+}
+
+ol a:link, ol a:visited {
+	color: white;
+	text-decoration: underline;
+}
+ol a:hover, ol a:focus {
+	text-decoration: none;
+}
+
+a.big:link, a.big:visited {
+	padding: 5px 10px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 5px 0px rgb(0,50,0);
+
+	text-decoration: none;
+	line-height: 2.5em;
+	font-size: 17pt;
+	font-family: "Intro", Arial, sans-serif;
+	text-transform: uppercase;
+
+	color: white;
+	background: darkgreen;
+}
+a.big:hover, a.big:focus {
+	box-shadow: 0px 0px 5px 0px rgb(0,100,0);
+	background: green;
+}
