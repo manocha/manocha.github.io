@@ -6,8 +6,8 @@
 	<script type="text/javascript">
 		function connect(token) {
 			var wsImpl = window.WebSocket || window.MozWebSocket;
-			var host = "ws://localhost:8181/";
-			//var host = "ws://54.215.248.12:8181/";
+			//var host = "ws://localhost:8181/";
+			var host = "ws://54.215.248.12:8181/";
 			window.ws = new wsImpl(host);
 
 			ws.onopen = function() {
