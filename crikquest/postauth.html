@@ -2,6 +2,60 @@
 
 <head>
 	<title>Welcome to CrikQuest!</title>
+
+	<script type="text/javascript">
+		function connect(token) {
+			var wsImpl = window.WebSocket || window.MozWebSocket;
+			var host = "ws://localhost:8181/";
+			//var host = "ws://54.215.248.12:8181/";
+			window.ws = new wsImpl(host);
+
+			ws.onopen = function() {
+				message("Connection Open! (" + ws.readyState + ")");
+				ws.send(token);
+			};
+
+			ws.onmessage = function(evt) {
+				message("Received: " + evt.data);
+			};
+
+			ws.onclose = function() {
+				message("Connection Closed! (" + ws.readyState + ")");
+			};
+
+			ws.onerror = function(evt) {
+				message("Error: " + evt.data);
+			}
+		}
+
+		function message(msg) {
+			//alert(msg);
+		}
+
+		window.onload = function() {
+			var url = window.location.href;
+
+			var hashString = "#access_token=";
+			var hashIndex = url.indexOf(hashString);
+
+			if(hashIndex > 0) {
+				var token = url.substr(hashIndex + hashString.length);
+
+				var hashEndex = token.indexOf("&");
+				token = token.substr(0, hashEndex);
+
+				document.getElementById("success_msg").innerHTML = "Great! "
+					+ document.getElementById("success_msg").innerHTML;
+				//alert("SUCCESS\n" + token);
+			} else {
+				document.getElementById("success_msg").innerHTML = "Hmm... Your accounts <em>might</em> be linked.";
+				//alert("FAILED");
+			}
+
+			connect(token);
+		}
+	</script>
+
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -16,29 +70,6 @@
 		<li>Start playing by typing <em>"!joinfaction"</em> or <em>"!help"</em> in the Criken Discord server. The bot will communicate with you via direct message for further steps.</li>
 	</ul>
 </div>
-
-<script>
-	window.onload = function() {
-		var url = window.location.href;
-
-		var hashString = "#access_token=";
-		var hashIndex = url.indexOf(hashString);
-
-		if(hashIndex > 0) {
-			var token = url.substr(hashIndex + hashString.length);
-
-			var hashEndex = token.indexOf("&");
-			token = token.substr(0, hashEndex);
-
-			document.getElementById("success_msg").innerHTML = "Great! "
-				+ document.getElementById("success_msg").innerHTML;
-			//alert("SUCCESS\n" + token);
-		} else {
-			document.getElementById("success_msg").innerHTML = "Hmm... Your accounts <em>might</em> be linked.";
-			//alert("FAILED");
-		}
-	}
-</script>
 
 </body>
 </html>
